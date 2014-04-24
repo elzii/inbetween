@@ -1,0 +1,22 @@
+// _fonts.scss
+
+@font-face {
+  font-family: 'TradeGothic';
+  src: url('../fonts/tradegothic-condeighteen-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/tradegothic-condeighteen-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/tradegothic-condeighteen-webfont.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/tradegothic-condeighteen-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/tradegothic-condeighteen-webfont.svg#TradeGothic') format('svg'); /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TradeGothic';
+  src: url('../fonts/tradegothic-boldcondtwenty-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/tradegothic-boldcondtwenty-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/tradegothic-boldcondtwenty-webfont.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/tradegothic-boldcondtwenty-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/tradegothic-boldcondtwenty-webfont.svg#TradeGothic') format('svg'); /* Legacy iOS */
+  font-weight: bold;
+  font-style: normal;
+}

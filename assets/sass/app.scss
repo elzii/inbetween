@@ -1,0 +1,205 @@
+// app.scss
+
+/* 
+  IMPORTS
+ */
+
+// dependencies
+@import "compass";
+
+// vendor
+@import "vendor/layers";
+
+// lib
+@import "lib/helpers",
+        "lib/fonts";
+
+
+
+
+/* 
+  VARIABLES
+ */
+// black/gray
+$color-primary          : #141414;
+$color-primary-dark     : #111111;
+$color-primary-light    : #1f1f1f;
+$color-primary-lighter  : #585858;
+
+// white(s)
+$color-secondary        : #ffffff;
+
+// fonts
+$font-default           : 'TradeGothic';
+$font-sans              : Arial, Helvetica, 'Helvetica Neue', sans-serif;
+$font-serif             : Georgia, serif;
+
+  // font classes
+  .font-default {font-family:$font-default;}
+  .font-serif   {font-family:$font-serif;}
+  .font-sans    {font-family:$font-sans;}
+
+// heights
+$height-nav_header      : 70;
+
+
+/* 
+  BODY DEFAULTS/RESETS
+ */
+body {
+  margin-top:#{$height-nav_header}px;
+
+  a {@include transition(all 100ms linear);}
+}
+
+
+
+/* 
+  BUTTONS
+ */
+.btn {
+  @include inline-block;
+  padding:15px 15px 12px 15px;
+  background-color:$color-primary;
+  color:$color-secondary;
+  text-decoration:none;
+  font-family:$font-default;
+  font-size:1.25em;
+  line-height:1.2;
+  text-transform: uppercase;
+  cursor:pointer;
+  font-weight:normal;
+
+  &:hover {
+    text-decoration:underline;
+  }
+
+  &.secondary, &.white {
+    background-color:$color-secondary;
+    color:$color-primary;
+
+  }
+}
+
+
+
+/* 
+  NAV#HEADER
+ */ 
+nav#header {
+  position:fixed;top:0;left:0;
+  z-index:1000;
+  width:100%;
+  height:#{$height-nav_header}px;
+  line-height:#{$height-nav_header}px;
+  background-color:$color-primary;
+  
+
+  // logo
+  .logo {
+    line-height:#{$height-nav_header}px;
+    padding-right:35px;
+
+    a {
+      position:relative;
+      top:1px;
+      display:block;
+      height:100%;width:auto;
+
+      img {
+        width:100%;height:auto;
+      }
+    }
+  }
+  
+  // menu (main)
+  .menu {
+    line-height:#{$height-nav_header}px;
+    font-family:$font-default;
+    text-transform:uppercase;
+    font-size:1.15em;
+    font-weight:bold;
+    
+    ul {
+      margin:0;padding:0;
+
+      li {
+        padding-right:20px;
+        @include inline-block;
+        
+        // &:after {content:'';clear:both;height:0;}
+      }
+      a {
+        display:block;
+        height:100%;width:auto;
+        text-decoration: none;
+        color:$color-primary-lighter;
+
+        &:hover {color:$color-secondary;}
+      }
+    }
+  }
+}
+
+
+/* 
+  SECTIONS
+ */
+  
+// intro
+#intro {
+  width:100%;
+  height:225px;
+  background-color:$color-primary-light;
+  color:$color-secondary;
+
+  .table {height:225px;}
+}
+
+
+// days
+#days {
+  width:100%;height:auto;
+
+  .day {
+    position:relative;
+    display:table;
+    width:100%;height:320px;
+    border-top:15px solid $color-primary-dark;
+    border-right:15px solid $color-primary-dark;
+    border-left:15px solid $color-primary-dark;
+    cursor:pointer;
+    
+    .day-overlay {
+      position:absolute;top:0;left:0;
+      width:100%;height:100%;
+      background-color:#fff;
+      /* TRANSITION */
+      @include transition(all 150ms linear);
+      @include opacity(0);
+      visibility:hidden;
+    }
+    .day-content {
+      display: table-cell;
+      vertical-align: middle;
+      width: 100%;
+      z-index: 100;
+      position: relative;
+    }
+
+    &:hover {
+      .day-overlay {
+        @include opacity(0.5);
+        visibility:visible;
+      }
+    }
+  }
+}
+
+
+  .cover-image {
+    width:100%;height:auto;
+    background-position:50% 50%;
+    background-repeat:no-repeat;
+    @include background-size(cover);
+  }
