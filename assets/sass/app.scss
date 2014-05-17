@@ -8,7 +8,8 @@
 @import "compass";
 
 // vendor
-@import "vendor/layers";
+@import "vendor/layers",
+        "vendor/fontawesome";
 
 // lib
 @import "lib/helpers",
@@ -50,13 +51,15 @@ body {
   margin-top:#{$height-nav_header}px;
 
   a {@include transition(all 100ms linear);}
+
+  li {clear:none;}
 }
 
 
 
-/* 
+/* -------------------------------
   BUTTONS
- */
+-------------------------------- */
 .btn {
   @include inline-block;
   padding:15px 15px 12px 15px;
@@ -83,9 +86,9 @@ body {
 
 
 
-/* 
-  NAV#HEADER
- */ 
+/* -------------------------------
+  HEADER
+-------------------------------- */
 nav#header {
   position:fixed;top:0;left:0;
   z-index:1000;
@@ -142,11 +145,9 @@ nav#header {
 }
 
 
-/* 
-  SECTIONS
- */
-  
-// intro
+/* -------------------------------
+  HOME (CHAPTERS)
+-------------------------------- */
 #intro {
   width:100%;
   height:225px;
@@ -203,3 +204,222 @@ nav#header {
     background-repeat:no-repeat;
     @include background-size(cover);
   }
+
+
+/* -------------------------------
+  ABOUT
+-------------------------------- */
+#tagline {
+  background-color:#141414;
+
+  .row-content {padding:80px;}
+
+  h1 {
+    font-family:"Futura";
+    margin:0 auto;
+    font-weight:bold;
+    color:#fff;
+    font-size:35px;
+    line-height:1.5;
+  }
+}
+
+  
+  /* -------------------------------
+    VIDEO
+  -------------------------------- */
+  #video {
+    height:530px;
+    width:100%;
+
+    .video-cover-photo {
+      position:relative;
+      width:100%;height:100%;
+      background-position:50% 50%;
+      background-repeat:no-repeat;
+      @include background-size(cover);
+      
+      &:hover .video-play-button { @include opacity(0.8); }
+    }
+
+    .video-play-button {
+      z-index:10;
+      position:absolute;top:50%;left:50%;
+      margin:-42px 0 0 -42px;
+      width:84px;
+      height:84px;
+      background-color:#fff;
+      @include opacity(0.5);
+      @include border-radius(42px);
+      background-image:url('../img/icon-play-button.png');
+      background-repeat:no-repeat;
+      background-position:55% 50%;
+      background-size:auto auto;
+      cursor:pointer;
+      /* TRANSITION */
+      @include transition(opacity 150ms);
+
+    }
+  }
+
+  #map {
+    width:100%;
+    height:510px;
+    background-position:50% 50%;
+    background-repeat:no-repeat;
+    @include background-size(cover);
+    background-image:url('../img/map.jpg');
+  }
+
+
+
+/* -------------------------------
+  CONTENT
+-------------------------------- */
+
+#content {
+  padding:50px 0;
+}
+
+  #sidebar {
+     padding-top:7px;
+  }
+
+  #main {
+
+
+    article {
+      
+    }
+
+      .post-title {
+        font-family:"Futura";
+        margin-top:0;
+        font-size:35px;
+        font-weight:bold;
+      }
+      p {
+        font-family:"Georgia";
+      }
+  }
+
+
+
+
+/* -------------------------------
+  FOOTER
+-------------------------------- */
+$height-nav_footer  : 78;
+#footer {
+  height: #{$height-nav_footer}px;
+  line-height:#{$height-nav_footer}px;
+  background-color: #131313;
+
+
+  // logo
+  .logo {
+    display:block;
+    line-height:inherit;
+    float:left;
+    width:18%;
+  }
+  
+  // menu (main)
+  .menu {
+    float:left;
+    line-height:inherit;
+    width:40%;
+    padding-left:25px;
+
+    ul {
+      margin:0;padding:0;
+      @include clearfix;
+
+      li {
+        display:block;
+        float:left;
+        
+        // &:after {content:'';clear:both;height:0;}
+      }
+      a {
+        display:block;
+        height:100%;width:auto;
+        text-decoration: underline;
+        padding:0 10px;
+        color:#fff;
+        font-size:14px;
+
+        &:hover {color:$color-secondary;}
+      }
+    }
+  }
+
+  // social
+  .social {
+    float:left;
+    width:20%;
+  }
+
+}
+
+
+.menu-social {
+  margin:0;
+  padding:0;
+  line-height:inherit;
+  list-style-type:none;
+
+  li {
+    display:block;
+    float:left;
+    margin-right:7px;
+
+    &.label {
+      color:#545454; 
+      font-size:13px;
+      text-transform:uppercase;
+      font-weight:bold;
+    }
+
+    &:first-child {margin-right:10px;}
+    &:last-child {margin-right:0;}
+  }
+
+  li a {
+    line-height:28px;
+    text-align:center;
+    width: 28px;
+    height: 28px;
+    background-color:#5b5b5b;
+    color:#141414;
+    @include border-radius(16px);
+    @include background-clip(padding-box);
+    text-decoration:none;
+    font-size:18px;
+  }
+
+  &.vertical {
+    li {
+      margin-right:0;
+      margin-bottom:7px;
+    }
+    li a {
+      color:#fff;
+      background-color:#dddddd;
+    }
+  }
+}
+
+.created {
+  width:22%;
+  float:left;
+  color:#fff;
+  font-size:13px;
+
+  a {
+    color:#fff;
+  }
+}
+
+
+.clearfix { @include clearfix; }
