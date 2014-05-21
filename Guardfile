@@ -9,17 +9,17 @@ if File.exists?("./config.rb")
 end
 
 # Minify CSS
-guard 'process', :name => 'Minify CSS', :command => 'juicer merge assets/css/app.css --force -c none' do
-  watch %r{assets/css/app\.css}
-end
+# guard 'process', :name => 'Minify CSS', :command => 'juicer merge assets/css/app.css --force -c none' do
+#   watch %r{assets/css/app\.css}
+# end
 
-# Minify JS
-guard 'process', :name => 'Minify application javascript', :command => 'juicer merge assets/js/app.js --force -s' do
-  watch %r{assets/js/app\.js}
-end
+# # Minify JS
+# guard 'process', :name => 'Minify application javascript', :command => 'juicer merge assets/js/app.js --force -s' do
+#   watch %r{assets/js/app\.js}
+# end
 
 
 # Livereload
-guard :livereload do
-  watch(%r{.+\.(css|js|html?)$})
-end
+# guard :livereload do
+#   watch(%r{.+\.(css|js|html?)$})
+# end
