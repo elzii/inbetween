@@ -3308,6 +3308,10 @@ ul.inline, ol.inline, dl.inline {
   font-style: normal;
 }
 
+html {
+  font-family: "TradeGothic", "Helvetica Neue", Helvetica, sans-serif;
+}
+
 /* 
   VARIABLES
  */
@@ -3423,6 +3427,47 @@ nav#header .menu ul a:hover {
   color: white;
 }
 
+/* -----------------------------------
+  HERO   
+------------------------------------ */
+#hero {
+  height: 530px;
+  background-color: #1f1f1f;
+  color: #fff;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+#hero .hero-inner {
+  height: 530px;
+  width: 100%;
+}
+#hero .table {
+  height: 100%;
+}
+#hero .cell {
+  vertical-align: bottom;
+  padding-bottom: 50px;
+}
+#hero .post-day {
+  font-size: 48px;
+  font-weight: normal;
+  line-height: 1;
+  margin: 10px;
+  text-transform: uppercase;
+}
+#hero .post-title {
+  font-size: 80px;
+  font-weight: normal;
+  font-family: "Futura";
+  line-height: 1.45;
+  margin: 0;
+  padding: 0 180px 0 5px;
+}
+
 /* -------------------------------
   HOME (CHAPTERS)
 -------------------------------- */
@@ -3436,6 +3481,9 @@ nav#header .menu ul a:hover {
   height: 225px;
 }
 
+/* -----------------------------------
+  DAYS   
+------------------------------------ */
 #days {
   width: 100%;
   height: auto;
@@ -3576,11 +3624,19 @@ nav#header .menu ul a:hover {
 #content {
   padding: 50px 0;
 }
+#content.page {
+  padding-bottom: 0;
+}
 
 #sidebar {
   padding-top: 7px;
 }
 
+#main article img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
 #main .post-title {
   font-family: "Futura";
   margin-top: 0;
@@ -3589,6 +3645,7 @@ nav#header .menu ul a:hover {
 }
 #main p {
   font-family: "Georgia";
+  line-height: 1.7;
 }
 
 /* -------------------------------
@@ -3638,6 +3695,9 @@ nav#header .menu ul a:hover {
   width: 20%;
 }
 
+/* -----------------------------------
+  SOCIAL MENU(S)   
+------------------------------------ */
 .menu-social {
   margin: 0;
   padding: 0;
@@ -3687,6 +3747,9 @@ nav#header .menu ul a:hover {
   color: #fff;
   background-color: #dddddd;
 }
+.menu-social.vertical li a:hover {
+  background-color: #999999;
+}
 
 .created {
   width: 22%;
@@ -3698,7 +3761,166 @@ nav#header .menu ul a:hover {
   color: #fff;
 }
 
+/* -----------------------------------
+  SINGLE/PAGE   
+------------------------------------ */
+p:first-child {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+p:first-child + p {
+  margin-top: -15px;
+}
+
+p:first-child:first-letter {
+  display: block;
+  font-family: "Futura";
+  font-size: 130px;
+  line-height: 1.1;
+  margin-left: -6px;
+  margin-top: -16px;
+  float: left;
+  padding-right: 20px;
+}
+
+/* -----------------------------------
+  PLAYLIST
+------------------------------------ */
+.playlist {
+  margin: 0 0 35px 0;
+  font-family: "Georgia";
+  color: #757575;
+  overflow: hidden;
+  *zoom: 1;
+}
+.playlist span {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+.playlist li {
+  float: left;
+  width: 50%;
+  margin-bottom: 10px;
+}
+.playlist li > div {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #efefef;
+  overflow: hidden;
+  *zoom: 1;
+}
+.playlist li:nth-child(n+1) {
+  padding-right: 10px;
+}
+.playlist li:nth-child(2n) {
+  padding-left: 10px;
+}
+.playlist .artist {
+  padding-right: 10px;
+  border-right: 1px solid #efefef;
+}
+.playlist .track {
+  padding-left: 10px;
+  font-style: italic;
+}
+.playlist .play-button {
+  float: right;
+  position: relative;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  background-color: #131313;
+  text-align: center;
+  cursor: pointer;
+}
+.playlist .play-button:before {
+  content: '\25B6';
+  font-size: 8px;
+  color: #fff;
+  line-height: 1;
+  position: absolute;
+  height: 4px;
+  width: 4px;
+  top: 50%;
+  left: 50%;
+  margin-top: -3px;
+  margin-left: -3px;
+}
+
+/* -----------------------------------
+  SLIDER   
+------------------------------------ */
+#slider {
+  margin-top: 50px;
+  width: 100%;
+  height: 600px;
+  text-align: center;
+}
+#slider .slider-title {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  position: relative;
+  margin: 0 auto;
+  top: 22px;
+  padding: 10px 15px;
+  font-family: "TradeGothic";
+  font-size: 20px;
+  color: #292929;
+  background-color: #fff;
+  line-height: 1;
+}
+#slider .flex-viewport {
+  text-align: left;
+}
+#slider .flex-control-nav {
+  display: none;
+}
+#slider ul.slides {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+#slider ul.slides li {
+  display: block;
+  width: 100%;
+  height: 600px;
+}
+
+/* -----------------------------------
+  HELPERS   
+------------------------------------ */
 .clearfix {
   overflow: hidden;
   *zoom: 1;
+}
+
+.row-content {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+.table {
+  display: table;
+}
+
+.cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.cell-bottom {
+  vertical-align: bottom;
 }

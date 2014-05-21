@@ -44,6 +44,7 @@ $font-serif             : Georgia, serif;
 $height-nav_header      : 70;
 
 
+
 /* 
   BODY DEFAULTS/RESETS
  */
@@ -145,6 +146,50 @@ nav#header {
 }
 
 
+/* -----------------------------------
+  HERO   
+------------------------------------ */
+#hero {
+  height:530px;
+  background-color:$color-primary-light;
+  color:#fff;
+  @include background-size(cover);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+  // .container
+  .hero-inner {
+    height:530px;
+    width:100%;
+  }
+
+  .table {
+    height:100%;
+  }
+
+  .cell {
+    vertical-align:bottom;
+    padding-bottom:50px;
+  }
+
+  .post-day {
+    font-size:48px;
+    font-weight:normal;
+    line-height:1;
+    margin:10px;
+    text-transform:uppercase;
+  }
+  .post-title {
+    font-size:80px;
+    font-weight:normal;
+    font-family:"Futura";
+    line-height:1.45;
+    margin:0;
+    padding:0 180px 0 5px;
+  }
+}
+
+
 /* -------------------------------
   HOME (CHAPTERS)
 -------------------------------- */
@@ -155,10 +200,17 @@ nav#header {
   color:$color-secondary;
 
   .table {height:225px;}
+
 }
 
 
-// days
+
+
+
+
+/* -----------------------------------
+  DAYS   
+------------------------------------ */
 #days {
   width:100%;height:auto;
 
@@ -279,6 +331,8 @@ nav#header {
 
 #content {
   padding:50px 0;
+
+  &.page {padding-bottom:0;}
 }
 
   #sidebar {
@@ -290,6 +344,7 @@ nav#header {
 
     article {
       
+      img {width:100%;height:auto;max-width:100%;}
     }
 
       .post-title {
@@ -300,6 +355,7 @@ nav#header {
       }
       p {
         font-family:"Georgia";
+        line-height:1.7;
       }
   }
 
@@ -362,7 +418,9 @@ $height-nav_footer  : 78;
 
 }
 
-
+/* -----------------------------------
+  SOCIAL MENU(S)   
+------------------------------------ */
 .menu-social {
   margin:0;
   padding:0;
@@ -406,6 +464,8 @@ $height-nav_footer  : 78;
     li a {
       color:#fff;
       background-color:#dddddd;
+
+      &:hover {background-color:#999999;}
     }
   }
 }
@@ -422,4 +482,147 @@ $height-nav_footer  : 78;
 }
 
 
+/* -----------------------------------
+  SINGLE/PAGE   
+------------------------------------ */
+p:first-child {
+  @include clearfix;
+}
+p:first-child + p {
+  margin-top:-15px;
+}
+  p:first-child:first-letter {
+    display: block;
+    font-family: "Futura";
+    font-size: 130px;
+    line-height: 1.1;
+    margin-left: -6px;
+    margin-top: -16px;
+    float: left;
+    padding-right: 20px;
+  }
+
+
+/* -----------------------------------
+  PLAYLIST
+------------------------------------ */
+#playlist {
+
+}
+  .playlist {
+    margin:0 0 35px 0;
+    font-family:"Georgia";
+    color:#757575;
+    @include clearfix;
+    
+    span {
+      display: -moz-inline-stack;
+      display: inline-block;
+      zoom: 1;
+      *display: inline;
+    }
+
+
+    li {
+      float:left;
+      width:50%;
+      margin-bottom:10px;
+      
+      > div {
+        padding-bottom:10px;
+        border-bottom:1px solid #efefef;
+        @include clearfix;
+      }
+      
+      &:nth-child(n+1) {padding-right:10px;}
+      &:nth-child(2n) {padding-left:10px;}
+    }
+
+    .artist {
+      padding-right:10px;
+      border-right:1px solid #efefef;
+    }
+    .track {
+      padding-left:10px;
+      font-style:italic;
+    }
+    .play-button {
+      float:right;
+      position: relative;
+      right:5px;
+      width: 20px;height: 20px;
+      @include border-radius(10px);
+      @include background-clip(padding-box);
+      background-color: #131313;
+      text-align:center;
+      cursor:pointer;
+
+      &:before {
+        content:'\25B6';
+        font-size:8px;
+        color:#fff;
+        line-height: 1;
+        position: absolute;
+        height: 4px;
+        width: 4px;
+        top: 50%;
+        left: 50%;
+        margin-top: -3px;
+        margin-left: -3px;
+      }
+    }
+  }
+
+
+/* -----------------------------------
+  SLIDER   
+------------------------------------ */
+#slider {
+  margin-top:50px;
+  width:100%;
+  height:600px;
+  text-align:center;
+  
+  .slider-title {
+    display: -moz-inline-stack;display: inline-block;zoom: 1;*display: inline;
+    position:relative;
+    margin:0 auto;
+    top:22px;
+    padding:10px 15px;
+    font-family:"TradeGothic";
+    font-size:20px;
+    color:#292929;
+    background-color:#fff;
+    line-height:1;
+  }
+
+  .flex-viewport {text-align:left;}
+
+  .flex-direction-nav {}
+
+  .flex-control-nav {display:none;}
+
+  ul.slides {
+    margin:0;
+    padding:0;
+    width:100%;height:100%;
+
+    li {
+      display:block;
+      width:100%;
+      height:600px;
+    }
+  }
+}
+
+
+
+/* -----------------------------------
+  HELPERS   
+------------------------------------ */
 .clearfix { @include clearfix; }
+.row-content {@include clearfix; }
+
+.table {display:table;}
+.cell {display:table-cell;vertical-align:middle;}
+.cell-bottom {vertical-align:bottom;}
